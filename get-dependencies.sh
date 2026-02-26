@@ -41,7 +41,7 @@ automake -a -c -f
 ./configure
 make -j$(nproc) datadir="./AppDir/bin/data"
 mv -v foobillardplus.desktop ../AppDir
-cp foobillardplus.png ./AppDir/.DirIcon
-mv -v foobillardplus.png ./AppDir
-mv -v foobillardplus ./AppDir/bin
-mv -v data ./AppDir/bin
+cp foobillardplus.png ../AppDir/.DirIcon
+mv -v foobillardplus.png ../AppDir
+mv -v foobillardplus ../AppDir/bin
+mv -v data ../AppDir/bin
