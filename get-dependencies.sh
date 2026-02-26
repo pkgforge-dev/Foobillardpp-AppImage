@@ -13,14 +13,9 @@ echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
 
 # Comment this out if you need an AUR package
-make-aur-package foobillard++
+#make-aur-package
 
 # If the application needs to be manually built that has to be done down here
-
-# if you also have to make nightly releases check for DEVEL_RELEASE = 1
-#
-# if [ "${DEVEL_RELEASE-}" = 1 ]; then
-# 	nightly build steps
-# else
-# 	regular build steps
-# fi
+echo "Making stable build of Foobillard++..."
+echo "---------------------------------------------------------------"
+wget https://downloads.sourceforge.net/foobillardplus/foobillardplus-3.42beta.tar.gz
