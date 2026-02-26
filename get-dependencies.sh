@@ -25,6 +25,7 @@ echo "---------------------------------------------------------------"
 wget https://downloads.sourceforge.net/foobillardplus/foobillardplus-3.42beta.tar.gz
 bsdtar -xvf foobillardplus-3.42beta.tar.gz
 
+mkdir -p ./AppDir/bin
 cd foobillardplus-3.42beta
 sed -i 's|/opt/foobillardplus/bin/||' foobillardplus.desktop
 sed -i 's|/opt/foobillardplus/||' foobillardplus.desktop
@@ -40,8 +41,9 @@ autoheader -f
 automake -a -c -f 
 ./configure
 make -j$(nproc) datadir="./AppDir/bin/data"
+
 mv -v foobillardplus.desktop ../AppDir
-cp foobillardplus.png ../AppDir/.DirIcon
+cp ./foobillardplus.png ../AppDir/.DirIcon
 mv -v foobillardplus.png ../AppDir
 mv -v foobillardplus ../AppDir/bin
 mv -v data ../AppDir/bin
