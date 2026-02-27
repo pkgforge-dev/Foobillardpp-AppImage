@@ -12,7 +12,7 @@ export STARTUPWMCLASS=
 export DEPLOY_OPENGL=1
 
 # Deploy dependencies
-quick-sharun ./AppDir/binfoobillardplus
+quick-sharun ./AppDir/bin/foobillardplus
 
 # Additional changes can be done in between here
 
