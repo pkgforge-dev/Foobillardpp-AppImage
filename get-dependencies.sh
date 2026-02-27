@@ -9,7 +9,6 @@ echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
     glu       \
     libdecor  \
-    libvorbis \
     sdl_mixer \
     sdl_net
 
