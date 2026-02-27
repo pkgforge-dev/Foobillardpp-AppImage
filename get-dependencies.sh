@@ -6,30 +6,21 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm \
-    glu       \
-    libdecor  \
-    libvorbis \
-    sdl_mixer \
-    sdl_net
+pacman -Syu --noconfirm glu sdl_mixer sdl_net
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano
+get-debloated-pkgs --add-common --prefer-nano libdecor-mini
 
-# Comment this out if you need an AUR package
-#make-aur-package
-
-# If the application needs to be manually built that has to be done down here
 echo "Making stable build of Foobillard++..."
 echo "---------------------------------------------------------------"
 VERSION=3.42beta
 echo $VERSION > ~/version
-wget https://downloads.sourceforge.net/foobillardplus/foobillardplus-VERSION.tar.gz
-bsdtar -xvf foobillardplus-3.42beta.tar.gz
+wget https://downloads.sourceforge.net/foobillardplus/foobillardplus-$VERSION.tar.gz
+bsdtar -xvf foobillardplus-$VERSION.tar.gz
 
 mkdir -p ./AppDir/bin
-cd foobillardplus-3.42beta
+cd foobillardplus-$VERSION
 sed -i 's|/opt/foobillardplus/bin/||' foobillardplus.desktop
 sed -i 's|/opt/foobillardplus/||' foobillardplus.desktop
 sed -e 's|freetype-config|pkg-config freetype2|g' -i src/Makefile.am
@@ -43,10 +34,7 @@ autoconf -f
 autoheader -f
 automake -a -c -f
 ./configure
-make -j$(nproc) #datadir="./AppDir/bin/data"
+make -j$(nproc)
 
 mv -v foobillardplus.desktop ../AppDir
-cp ./foobillardplus.png ../AppDir/.DirIcon
-mv -v foobillardplus.png ../AppDir
-mv -v src/foobillardplus ../AppDir/bin
-mv -v data/* ../AppDir/bin
+mv -v src/foobillardplus data/* ../AppDir/bin
