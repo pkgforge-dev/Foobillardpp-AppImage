@@ -46,4 +46,4 @@ mv -v foobillardplus.desktop ../AppDir
 cp ./foobillardplus.png ../AppDir/.DirIcon
 mv -v foobillardplus.png ../AppDir
 mv -v src/foobillardplus ../AppDir/bin
-mv -v data ../AppDir/bin
+mv -v data/* ../AppDir/bin
