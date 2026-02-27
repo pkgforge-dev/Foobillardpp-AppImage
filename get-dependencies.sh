@@ -25,7 +25,7 @@ echo "Making stable build of Foobillard++..."
 echo "---------------------------------------------------------------"
 VERSION=3.42beta
 echo $VERSION > ~/version
-wget https://downloads.sourceforge.net/foobillardplus/foobillardplus-VERSION.tar.gz
+wget https://downloads.sourceforge.net/foobillardplus/foobillardplus-$VERSION.tar.gz
 bsdtar -xvf foobillardplus-3.42beta.tar.gz
 
 mkdir -p ./AppDir/bin
