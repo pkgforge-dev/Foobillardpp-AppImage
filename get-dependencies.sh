@@ -25,7 +25,7 @@ echo "---------------------------------------------------------------"
 VERSION=3.42beta
 echo $VERSION > ~/version
 wget https://downloads.sourceforge.net/foobillardplus/foobillardplus-$VERSION.tar.gz
-bsdtar -xvf foobillardplus-3.42beta.tar.gz
+bsdtar -xvf foobillardplus-$VERSION.tar.gz
 
 mkdir -p ./AppDir/bin
 cd foobillardplus-3.42beta
