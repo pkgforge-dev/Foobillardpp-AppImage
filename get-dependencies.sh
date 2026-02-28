@@ -28,7 +28,7 @@ wget https://downloads.sourceforge.net/foobillardplus/foobillardplus-$VERSION.ta
 bsdtar -xvf foobillardplus-$VERSION.tar.gz
 
 mkdir -p ./AppDir/bin
-cd foobillardplus-3.42beta
+cd foobillardplus-$VERSION
 sed -i 's|/opt/foobillardplus/bin/||' foobillardplus.desktop
 sed -i 's|/opt/foobillardplus/||' foobillardplus.desktop
 sed -e 's|freetype-config|pkg-config freetype2|g' -i src/Makefile.am
