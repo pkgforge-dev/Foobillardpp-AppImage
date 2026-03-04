@@ -44,8 +44,6 @@ automake -a -c -f
 ./configure
 make -j$(nproc)
 
-mv -v foobillardplus.desktop ../AppDir
 cp ./foobillardplus.png ../AppDir/.DirIcon
-mv -v foobillardplus.png ../AppDir
-mv -v src/foobillardplus ../AppDir/bin
-mv -v data/* ../AppDir/bin
+mv -v foobillardplus.png foobillardplus.desktop ../AppDir
+mv -v src/foobillardplus data/* ../AppDir/bin
