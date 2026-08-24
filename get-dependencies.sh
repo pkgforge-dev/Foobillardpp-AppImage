@@ -8,13 +8,12 @@ echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
     glu       \
-    libdecor  \
     sdl_mixer \
     sdl_net
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano
+get-debloated-pkgs --add-common --prefer-nano libdecor-mini
 
 echo "Making stable build of Foobillard++..."
 echo "---------------------------------------------------------------"
