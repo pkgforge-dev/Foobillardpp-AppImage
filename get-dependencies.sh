@@ -6,10 +6,7 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm \
-    glu       \
-    sdl_mixer \
-    sdl_net
+pacman -Syu --noconfirm glu sdl_mixer sdl_net
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
